@@ -8,3 +8,8 @@ make test || exit -1
 make dist || exit -1
 tar -xvf dist/PySolFC-*.tar.xz || exit -1
 (cd PySolFC-*/ && make test) || exit -1
+
+if [ "$TRAVIS_OS_NAME" = "osx" ]; then
+    PYTHONPATH="$PYTHONPATH:." python3 setup_osx.py py2app
+    (cd dist && tar cJf ../PySolFC.app.tar.xz PySolFC.app/)
+fi

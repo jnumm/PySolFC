@@ -54,6 +54,8 @@ def init():
         d = os.path.join(os.path.dirname(sys.path[0]), 'locale')
     if os.path.exists(d) and os.path.isdir(d):
         locale_dir = d
+    if sys.platform == 'darwin':
+        locale_dir = 'locale'
     # if locale_dir: locale_dir = os.path.normpath(locale_dir)
     # gettext.install('pysol', locale_dir, unicode=True) # ngettext don't work
     gettext.bindtextdomain('pysol', locale_dir)

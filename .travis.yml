@@ -47,6 +47,6 @@ matrix:
 script:
     - export TIDYALL_DATA_DIR="$HOME/tidyall_d"
     - bash -x scripts/travis-ci-build
-    - if test "$TRAVIS_OS_NAME" = "osx" ; then PYTHONPATH="`pwd`" python3 setup_osx.py py2app ; fi
+    - if test "$TRAVIS_OS_NAME" = "osx" ; then PYTHONPATH="`pwd`" python3 setup.py py2app ; fi
     - if test "$TRAVIS_OS_NAME" = "osx" ; then find . -iname '*.app' ; fi
     - if test "$TRAVIS_OS_NAME" = "osx" ; then (cd dist; tar -cvf ../PySolFC.app.tar PySolFC.app/ ; ); xz PySolFC.app.tar ; fi

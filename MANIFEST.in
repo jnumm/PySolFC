@@ -3,7 +3,7 @@
 ##
 ## code
 ##
-include pysol.py setup.py setup_osx.py setup.cfg MANIFEST.in Makefile
+include pysol.py setup.py setup.cfg MANIFEST.in Makefile
 include COPYING README.md AUTHORS.md README.android README.kivy
 include NEWS.asciidoc
 #recursive-include pysollib *.py
@@ -14,7 +14,6 @@ include pysollib/game/*.py
 include pysollib/games/*.py pysollib/games/special/*.py
 include pysollib/games/ultra/*.py pysollib/games/mahjongg/*.py
 include data/tcl/*.tcl
-include data/pysol.desktop
 include data/pysolfc.glade
 graft data/themes
 recursive-exclude data/themes *.py
@@ -44,7 +43,6 @@ graft html-src
 #graft data/images
 recursive-include data/images *.gif *.png *.jpg
 graft data/tiles
-include data/pysol.xbm data/pysol.xpm data/pysol.ico data/PySol.icns
 ##
 ## data - sound
 ##
@@ -81,6 +79,10 @@ graft data/cardset-standard
 graft data/cardset-tuxedo
 graft data/cardset-vienna-2k
 graft data/cardset-dondorf
+##
+## misc - platform-dependent data
+##
+recursive-include misc *
 ##
 ## exclude dirs
 ##

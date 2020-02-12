@@ -458,7 +458,7 @@ class Options:
             if sys.getwindowsversion() >= (5, 1):  # xp
                 self.tile_theme = 'xpnative'
         elif WIN_SYSTEM == 'x11':
-            self.tile_theme = 'clam'
+            self.tile_theme = 'arc'
             self.default_tile_theme = 'default'
         elif WIN_SYSTEM == 'aqua':
             self.tile_theme = self.default_tile_theme = 'aqua'

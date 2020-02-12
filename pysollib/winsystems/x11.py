@@ -67,11 +67,11 @@ def init_root_window(root, app):
                 root.tk.evalfile(f)
             except Exception:
                 traceback.print_exc()
-        f = 'fsdialog8.5.tcl'
-        f = os.path.join(app.dataloader.dir, 'tcl', f)
-        if os.path.exists(f):
+
+        d = os.path.join(app.dataloader.dir, 'tcl', 'fsdialog')
+        if os.path.isdir(d):
             try:
-                root.tk.evalfile(f)
+                root.tk.eval('global auto_path; lappend auto_path {%s}' % d)
             except Exception:
                 traceback.print_exc()
             else:
